@@ -12,6 +12,8 @@
         ilişkilendirilmiş bir form oluşturmak için kullanılır.
         "ilk parametre" (urunguncelle)   post işlemi gerçekleştirdikden sonra hangi acsionresult çalışacak onu belirtlir   "-->
 
+    @Html.HiddenFor(x=> x.UrunId) // ürün güncellede id gözükmemesi ama  güncellede işimize yarıcağından gizli 
+
     @Html.LabelFor(x => x.UrunAd)
     @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
 

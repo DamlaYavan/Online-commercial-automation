@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MyProject.Models.siniflar;
 using myfirstproject.Models.siniflar;
 using System.Security.Cryptography;
+using System.Data.Entity.Core.Objects;
 
 namespace WebApplication2.Controllers
 {
@@ -64,6 +65,24 @@ namespace WebApplication2.Controllers
         }
 
        
+        public ActionResult UrunGuncelle(Urun urun)
+        {
+            var newurun = baglan.Uruns.Find(urun.UrunId);
+            newurun.UrunAd = urun.UrunAd;
+            newurun.UrunGorsel = urun.UrunGorsel;
+            newurun.AlisFiyat = urun.AlisFiyat;
+            newurun.SatisFiyat = urun.SatisFiyat;
+            newurun.SatisHarekets = urun.SatisHarekets;
+            newurun.Marka = urun.Marka;
+            newurun.Stok = urun.Stok;
+            newurun.KategoriId = urun.KategoriId;
+            newurun.Durum = urun.Durum;
+            baglan.SaveChanges();
+            return RedirectToAction("Index"); //güncelleme işleminden sonra kategori Index sayfasına dön. 
+
+
+        }
+
     }
 
   
