@@ -14,9 +14,9 @@ namespace WebApplication2.Controllers
 
         // GET: Departman
         Context baglan=new Context();
-        public ActionResult Index()
+        public ActionResult Index() 
         {
-            var degerler = baglan.Departmans.ToList(); //departmanları getir
+            var degerler = baglan.Departmans.Where(x=>x.Durum==true).ToList(); //durumu true olan departmanları getir
             return View(degerler);
         }
 
@@ -30,10 +30,39 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public ActionResult DepartmanEkle(Departman departman)
         {
+            departman.Durum = true;
             baglan.Departmans.Add(departman);
             baglan.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        public ActionResult DepartmanSil(int id)
+        {
+            var newdep = baglan.Departmans.Find(id);
+            newdep.Durum = false;
+            baglan.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
+        public ActionResult DepartmanGetir(int id) //Güncelleme işlemi için seçilen departmanı getiricek
+        {
+            var newdepartman = baglan.Departmans.Find(id);
+            return View("DepartmanGetir",newdepartman);
+            
+        }
+
+        public ActionResult DepartmanGuncelle(Departman departman) //DepartmanGetir Viewdan gelen departman
+        {
+            var newdepartman = baglan.Departmans.Find(departman.DepartmanId);
+            newdepartman.DepartmanAd = departman.DepartmanAd;
+            baglan.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DepartmanDetay(int id) 
+        {
+            return View();
+        }
     }
 }
