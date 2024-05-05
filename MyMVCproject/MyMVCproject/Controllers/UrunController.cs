@@ -36,7 +36,7 @@ namespace WebApplication2.Controllers
 
         [HttpPost]
         public ActionResult UrunEkle(Urun u)
-        {
+        {   u.Durum= true;
             baglan.Uruns.Add(u);
             baglan.SaveChanges();
             return RedirectToAction("Index");
