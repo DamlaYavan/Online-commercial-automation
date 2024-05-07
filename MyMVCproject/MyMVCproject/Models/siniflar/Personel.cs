@@ -22,7 +22,11 @@ namespace myfirstproject.Models.siniflar
         [StringLength(250)] //uzun link olabilir 
         public String PersonelGorsel { get; set; }  //görselin sadece yolunu tutucaz o yüzden string 
 
-        public Departman Departman { get; set; }
+        public int Departmanid { get; set; }
+        public virtual Departman Departman { get; set; }  //özelliklerin virtual olarak işaretlenmesi,
+                                                          //tembel yükleme (lazy loading) özelliğinin
+                                                          //etkinleşmesine neden olur. sadece özelliğe erişildiğinde
+                                                          //departmana bağlanır. 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
 
 
