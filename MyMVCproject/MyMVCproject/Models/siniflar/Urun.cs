@@ -28,7 +28,10 @@ namespace myfirstproject.Models.siniflar
         public string UrunGorsel { get; set; }
 
         public int KategoriId { get; set; }
-        public virtual Kategori Kategori { get; set; } //sql kategori ID tarzında bişeye dönüştürüyo bunu
+        public virtual Kategori Kategori { get; set; }    //özelliklerin virtual olarak işaretlenmesi,
+                                                          //tembel yükleme (lazy loading) özelliğinin
+                                                          //etkinleşmesine neden olur. sadece özelliğe erişildiğinde
+                                                          //kategori ye bağlanır. 
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
 
