@@ -1,4 +1,5 @@
-﻿
+﻿@model  List<myfirstproject.Models.siniflar.Personel>
+
 @{
     ViewBag.Title = "DepartmanDetay";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -6,8 +7,11 @@
 <br />
 <h2>Departman Detay</h2>
 <br />
-<div style="background-color:darkgray"> deneme </div>
-<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> Departman Adı: @ViewBag.DptAd  </li>
+</ol>
+
 <table class="table table-hover">
     <tr>
         @*Tablo Başlıkları*@
@@ -17,20 +21,16 @@
         <th>Görsel</th>
         <th>Satışlar</th>
     </tr>
+    @foreach (var x in Model)
+    {
     <tr>
-        <td>1</td>
-        <td>Ali</td>
-        <td>Bulut</td>
-        <td>text</td>
+        <td>@x.PersonelId</td>
+        <td>@x.PersonelAd</td>
+        <td>@x.PersonelSoyad</td>
+        <td>@x.PersonelGorsel</td>
         <td> <a href="#" class="btn btn-default" style="background-color:darkorange">Satışlar</a> </td>
     </tr>
-    <tr>
-        <td>2</td>
-        <td>Hasan</td>
-        <td>Kaya</td>
-        <td>text</td>
-        <td> <a href="#" class="btn btn-default" style="background-color:darkorange">Satışlar</a> </td>
-    </tr>
+    }
 </table>
 
 

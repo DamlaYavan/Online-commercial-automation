@@ -62,7 +62,12 @@ namespace WebApplication2.Controllers
 
         public ActionResult DepartmanDetay(int id) 
         {
-            return View();
+            var degerler = baglan.Personels.Where(x => x.Departmanid == id).ToList();
+            var newdepartman=baglan.Departmans.Where(x=> x.DepartmanId==id).
+                Select(y=>y.DepartmanAd).
+                FirstOrDefault(); //tek değer çek first or default 
+            ViewBag.DptAd=newdepartman;
+            return View(degerler);
         }
     }
 }
