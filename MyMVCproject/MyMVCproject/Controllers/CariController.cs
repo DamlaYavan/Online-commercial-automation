@@ -69,6 +69,15 @@ namespace WebApplication2.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult CariSatis(int id)
+        {
+            var degerler=Baglan.SatisHarekets.Where(x=>x.CariId==id).ToList();
+            var NewCariAd = Baglan.Carilers.Where(x => x.CariId == id).
+                Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.CariAd = NewCariAd; //htmle deger taşıma
+            return View(degerler);
+        }
+
 
     }
 }

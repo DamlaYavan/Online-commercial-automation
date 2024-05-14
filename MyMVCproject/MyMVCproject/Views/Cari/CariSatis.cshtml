@@ -1,0 +1,41 @@
+﻿@using myfirstproject.Models.siniflar
+@model  List<myfirstproject.Models.siniflar.SatisHareket>
+@{
+    ViewBag.Title = "CariSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2> Müşteriye Olan Satışlar </h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> Müşteri Adı: @ViewBag.CariAd  </li>
+</ol>
+
+<table class="table table-condensed">
+    <tr>
+        @*Tablo Başlıkları*@
+        <th>Satış ID</th>
+        <th>Personel</th>
+        <th>Ürün</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SatisId</td>
+            <td>@x.Personel.PersonelAd @x.Personel.PersonelSoyad</td>
+            <td>@x.Urun.UrunAd</td>
+            <td>@x.Fiyat</td>
+            <td>@x.Adet</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarih</td>
+            <td> <a href="#" class="btn btn-default" style="background-color:darkolivegreen"> Yazdır </a></td>
+        </tr>
+    }
+</table>
