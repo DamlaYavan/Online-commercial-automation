@@ -10,7 +10,7 @@ namespace myfirstproject.Models.siniflar
         public int CariId { get; set; }
 
         [Column(TypeName = "VarChar")]
-        [StringLength(30)]
+        [StringLength(30,ErrorMessage ="En fazla 30 karakter yazabilirsiniz!")]
         public string CariAd { get; set; }
 
         [Column(TypeName = "VarChar")]
@@ -23,7 +23,10 @@ namespace myfirstproject.Models.siniflar
 
         [Column(TypeName = "VarChar")]
         [StringLength(50)]
+        [Required(ErrorMessage ="Bu alanı boş geçemezsiniz!")]
         public string CariMail { get; set; }
+
+        public bool Durum { get; set; }
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
 
