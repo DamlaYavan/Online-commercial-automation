@@ -1,0 +1,39 @@
+﻿@using MyProject.Models.siniflar
+@model List<myfirstproject.Models.siniflar.Cariler>
+@{
+    ViewBag.Title = "Index";
+    //Layout = null;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Cari ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.CariId</td>
+                    <td>@x.CariAd</td>
+                    <td>@x.CariSoyad</td>
+                    <td>@x.CariSehir</td>
+                    <td>@x.CariMail</td>
+                    <td><a href="/Cari/CariSil/@x.CariId" class="btn btn-danger"> Sil  </a></td>
+                    <td><a href="/Cari/CariGetir/@x.CariId" class="btn btn-success"> Güncelle  </a></td>
+                    <td><a href="#" class="btn btn-default" style="background-color: lightseagreen; color:white "> Satın Alma Geçmişi </a></td>
+            
+                </tr>
+            }
+</table>
+<a href="/Cari/CariEkle/" class="btn btn-info"> Yeni Müşteri </a>
+
+
+

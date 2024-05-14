@@ -1,0 +1,37 @@
+﻿@model  myfirstproject.Models.siniflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Müşteri Güncelleme</h2>
+<br />
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post)) //method, controller belirtisi
+{  // post işlemi gerçekleştirdikden sonra hangi acsionresult çalışacak
+    <div class="form-group">
+        @Html.LabelFor(x => x.CariAd)
+        @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red" }) @*bu validasyon doğrulaması uyarı mesajını cariler modelsden alıcak*@
+        <br />
+        @Html.LabelFor(x => x.CariSoyad)
+        @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CariSehir)
+        @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CariMail)
+        @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariMail, "", new { @style = "color:red" }) @*bu validasyon doğrulaması uyarı mesajını cariler modelsden alıcak*@
+
+
+        @Html.HiddenFor(x => x.CariId)
+    </div>
+    <button class="btn btn-warning" style="background-color:yellowgreen "> Güncelle </button>
+    //ürün güncellede id gözükmemesi ama güncellemede işimize yarıcağından gizli
+}
+
+
+
+

@@ -17,12 +17,8 @@
     @foreach (var k in Model)
     {
         <tr>
-            <td>
-                @k.DepartmanId
-            </td>
-            <td>
-                @k.DepartmanAd
-            </td>
+            <td>@k.DepartmanId</td>
+            <td>@k.DepartmanAd</td>
             <td>
                 <a href="/Departman/DepartmanSil/@k.DepartmanId" class="btn btn-danger"> Sil </a>
             </td>
