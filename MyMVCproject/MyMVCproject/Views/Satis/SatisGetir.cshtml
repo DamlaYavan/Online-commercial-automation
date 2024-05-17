@@ -1,0 +1,37 @@
+﻿@model myfirstproject.Models.siniflar.SatisHareket
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Satış işlemi Güncelleme</h2>
+<br />
+@using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post)) //method, controller belirtisi
+{  // post işlemi gerçekleştirdikden sonra hangi acsionresult çalışacak
+    <div class="form-group">
+        @Html.LabelFor(x => x.Urun)
+        @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
+
+        @Html.Label("Müşteri")   @*label içerisinde cari yerine müşteri yazması daha iyi*@
+        @Html.DropDownListFor(x => x.CariId, (List<SelectListItem>)ViewBag.cariler, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Personel)
+        @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control" }) @*controller urunekleden dgr1 degeri geliyor.*@
+
+        @Html.LabelFor(x => x.Adet)
+        @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Fiyat)
+        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.ToplamTutar)
+        @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+
+        @Html.HiddenFor(x => x.SatisId)
+
+    </div>
+    <button class="btn btn-warning" style="background-color:yellowgreen "> Güncelle </button>
+    //ürün güncellede id gözükmemesi ama güncellemede işimize yarıcağından gizli
+}
+

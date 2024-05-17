@@ -1,0 +1,40 @@
+﻿@model myfirstproject.Models.siniflar.SatisHareket
+
+@{
+    ViewBag.Title = "SatisEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2 style=" font-size:25px ">Yeni Ürün Sayfası </h2>
+<br />
+
+<form class="form-group" method="post">
+
+    <div>
+        @Html.LabelFor(x => x.Urun)
+        @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
+
+        @Html.Label("Müşteri")   @*label içerisinde cari yerine müşteri yazması daha iyi*@ 
+        @Html.DropDownListFor(x => x.CariId, (List<SelectListItem>)ViewBag.cariler, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Personel)
+        @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control" }) @*controller urunekleden dgr1 degeri geliyor.*@
+
+
+        @Html.LabelFor(x => x.Adet)
+        @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Fiyat)
+        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.ToplamTutar)
+        @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+
+        <br />
+        <button class="btn btn-info"> Kaydet </button>
+
+    </div>
+</form>
+

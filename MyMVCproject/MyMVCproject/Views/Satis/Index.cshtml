@@ -1,0 +1,43 @@
+﻿@using MyProject.Models.siniflar
+@model List<myfirstproject.Models.siniflar.SatisHareket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped" style="margin-top:20px; background-color: cornsilk" ">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Müşteri</th>
+        <th>Personel</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Gücelle</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SatisId</td>
+            <td>@x.Urun.UrunAd</td>
+            <td>@x.Cariler.CariAd @x.Cariler.CariSoyad</td>
+            <td>@x.Personel.PersonelAd @x.Personel.PersonelSoyad</td>
+            <td>@x.Adet</td>
+            <td>@x.Fiyat</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarih</td>
+            <td><a href="/Satis/SatisGetir/@x.SatisId" class="btn btn-success"> Güncelle  </a></td>
+            <td><a href="#" class="btn btn-default" style="background-color: lightseagreen; color:white "> Detaylar </a></td>
+            @*departman detay sayfası ile aynı işlem olduğundan aynı controllara yönlendirdik*@
+        </tr>
+    }
+</table>
+<a href="/Satis/SatisEkle/" class="btn btn-info"> Yeni Satış Yap </a>
+
+
+
