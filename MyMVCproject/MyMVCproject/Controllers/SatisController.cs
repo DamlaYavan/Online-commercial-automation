@@ -99,5 +99,14 @@ namespace WebApplication2.Controllers
             baglan.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult SatisDetay(int id)
+        {
+            var degerler=baglan.SatisHarekets.Where(x=>x.SatisId==id).ToList();
+            return View(degerler);
+        }
     }
 }
+
+
+
