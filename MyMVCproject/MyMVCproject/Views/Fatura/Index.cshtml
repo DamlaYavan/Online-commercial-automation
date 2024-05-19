@@ -1,0 +1,57 @@
+﻿@using MyProject.Models.siniflar
+@model List<myfirstproject.Models.siniflar.Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table id="tbl1" class="table table-striped" style="margin-top:20px; background-color: cornsilk" ">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Seri No</th>
+            <th>Sıra No</th>
+            <th>Vergi Dairesi</th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Toplam</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.FaturaId</td>
+            <td>@x.FaturaSeriNo</td>
+            <td>@x.FaturaSıraNo</td>
+            <td>@x.VergiDairesi</td>
+            <td>@x.Tarih</td>
+            <td>@x.Saat</td>
+            <td>@x.TeslimEden</td>
+            <td>@x.TeslimAlan</td>
+            <td>@x.Toplam</td>
+            <td><a href="/Fatura/FaturaGetir/@x.FaturaId" class="btn btn-success"> Güncelle  </a></td>
+            <td><a href="/Fatura/FaturaDetay/@x.FaturaId" class="btn btn-default" style="background-color: lightseagreen; color:white "> Detaylar </a></td>
+            @*departman detay sayfası ile aynı işlem olduğundan aynı controllara yönlendirdik*@
+        </tr>
+    }
+</table>
+<a href="/Fatura/FaturaEkle/" class="btn btn-info"> Fatura Ekle</a>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});  //datatable uygulanıcak tabloyu belirler
+</script>
+
+

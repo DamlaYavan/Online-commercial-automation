@@ -15,6 +15,7 @@ namespace myfirstproject.Models.siniflar
         public int Miktar { get; set; }
         public decimal BirimFiyat { get; set; }
         public decimal Tutar { get; set; }
-        public Faturalar Faturalar { get; set; }
+        public int FaturaId { get; set; }
+        public virtual Faturalar Faturalar { get; set; }
     }
 }

@@ -1,0 +1,40 @@
+﻿@model myfirstproject.Models.siniflar.Faturalar
+
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Güncelleme</h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post)) //method, controller belirtisi
+{  // post işlemi gerçekleştirdikden sonra hangi acsionresult çalışacak
+    <div class="form-group">
+        @Html.Label("Fatura Seri No")
+        @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+
+        @Html.Label("Fatura Sıra No")
+        @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Tarih)
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Saat)
+        @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+
+        @Html.Label("Vergi Dairesi")
+        @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+
+        @Html.Label("Tesllim Eden")
+        @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+
+        @Html.Label("Teslim Alan")
+        @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+
+        @Html.HiddenFor(x=>x.FaturaId)
+
+    </div>
+    <button class="btn btn-warning" style="background-color:yellowgreen "> Güncelle </button>
+    //ürün güncellede id gözükmemesi ama güncellemede işimize yarıcağından gizli
+}

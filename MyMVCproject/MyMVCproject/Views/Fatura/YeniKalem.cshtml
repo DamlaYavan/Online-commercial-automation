@@ -1,0 +1,34 @@
+﻿@model myfirstproject.Models.siniflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 style=" font-size:25px ">Yeni Kalem Sayfası </h2>
+<br />
+
+<form class="form-group" method="post">
+
+    <div>
+
+        @Html.Label("Açıklama")
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Miktar)
+        @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.BirimFiyat)
+        @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
+
+        @Html.LabelFor(x => x.Tutar)
+        @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+
+        @Html.HiddenFor(x => x.FaturaId, new { @Value = ViewBag.FtrId })
+        <br />
+        <button class="btn btn-info"> Kaydet </button>
+
+    </div>
+</form>
+
+
