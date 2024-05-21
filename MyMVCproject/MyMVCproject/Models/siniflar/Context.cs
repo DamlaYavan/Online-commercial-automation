@@ -16,6 +16,7 @@ namespace MyProject.Models.siniflar
         public DbSet<SatisHareket> SatisHarekets { get; set; }
         public DbSet<Urun> Uruns { get; set; }
         public DbSet<Kategori> Kategoris { get; set; }
+        public DbSet<Detay> Detays { get; set; }
 
 
     }
