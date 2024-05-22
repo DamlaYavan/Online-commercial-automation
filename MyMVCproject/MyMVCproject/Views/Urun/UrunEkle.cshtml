@@ -11,7 +11,7 @@
 <form class="form-group" method="post">
 
     <div>
-        @Html.LabelFor(x => x.UrunAd)
+        @Html.Label("Ürün Adı")
         @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
 
         @Html.LabelFor(x => x.Marka)
@@ -20,20 +20,20 @@
         @Html.LabelFor(x => x.Stok)
         @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
 
-        @Html.LabelFor(x => x.AlisFiyat)
+        @Html.Label("Alış Fiyat")
         @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
 
-        @Html.LabelFor(x => x.SatisFiyat)
+        @Html.Label("Satış Fiyat")
         @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
 
         @Html.LabelFor(x => x.Durum)
         @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
 
-        @Html.LabelFor(x => x.UrunGorsel)
+        @Html.Label("Görsel")
         @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
 
         @Html.LabelFor(x => x.Kategori)
-        @Html.DropDownListFor(x=>x.KategoriId,(List<SelectListItem>)ViewBag.dgr1, new { @class="form-control"}) @*controller urunekleden dgr1 degeri geliyor.*@
+        @Html.DropDownListFor(x => x.KategoriId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" }) @*controller urunekleden dgr1 degeri geliyor.*@
         @*Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })*@
 
         <br />

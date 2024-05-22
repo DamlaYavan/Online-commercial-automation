@@ -6,19 +6,19 @@
 }
 
 <br />
-<h2 style=" font-size:25px ">Yeni Müşteri Sayfası </h2>
+<h2 style=" font-size:25px ">Yeni Personel Sayfası </h2>
 <br />
 
 <form class="form-group" method="post">
 
     <div>
-        @Html.LabelFor(x => x.PersonelAd)
+        @Html.Label("Personel Ad")
         @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.PersonelSoyad)
+        @Html.Label("Personel Soyad")
         @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.PersonelGorsel)
+        @Html.Label("Personel Görsel")
         @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
         <br />
         @Html.LabelFor(x => x.Departman)

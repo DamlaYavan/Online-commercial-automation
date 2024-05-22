@@ -10,7 +10,7 @@
 @using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post)) //method, controller belirtisi
 {  // post işlemi gerçekleştirdikden sonra hangi acsionresult çalışacak
     <div class="form-group">
-        @Html.LabelFor(x => x.Urun)
+        @Html.Label("Ürün")
         @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
 
         @Html.Label("Müşteri")   @*label içerisinde cari yerine müşteri yazması daha iyi*@
@@ -25,7 +25,7 @@
         @Html.LabelFor(x => x.Fiyat)
         @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
 
-        @Html.LabelFor(x => x.ToplamTutar)
+        @Html.Label("Toplam Tutar")
         @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
 
         @Html.HiddenFor(x => x.SatisId)

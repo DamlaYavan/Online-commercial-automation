@@ -12,8 +12,8 @@
 <form class="form-group" method="post">
 
     <div>
-        @Html.LabelFor(x => x.KategoriAd)
-        @Html.TextBoxFor(x => x.KategoriAd, new {@class="form-control"}) 
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
         <br />
         <button class="btn btn-info"> Kaydet </button>
 

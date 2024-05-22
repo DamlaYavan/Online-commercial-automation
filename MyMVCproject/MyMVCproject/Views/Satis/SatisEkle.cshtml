@@ -13,10 +13,10 @@
 <form class="form-group" method="post">
 
     <div>
-        @Html.LabelFor(x => x.Urun)
+        @Html.Label("Ürün")
         @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
 
-        @Html.Label("Müşteri")   @*label içerisinde cari yerine müşteri yazması daha iyi*@ 
+        @Html.Label("Müşteri")   @*label içerisinde cari yerine müşteri yazması daha iyi*@
         @Html.DropDownListFor(x => x.CariId, (List<SelectListItem>)ViewBag.cariler, new { @class = "form-control" })
 
         @Html.LabelFor(x => x.Personel)
@@ -29,7 +29,7 @@
         @Html.LabelFor(x => x.Fiyat)
         @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
 
-        @Html.LabelFor(x => x.ToplamTutar)
+        @Html.Label("Toplam Tutar")
         @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
 
         <br />

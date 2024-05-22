@@ -9,10 +9,10 @@
 <br />
 @using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
 {  // post işlemi gerçekleştirdikden sonra hangi acsionresult çalışacak 
-    <div class="form-group" >
-        @Html.LabelFor(x=>x.KategoriAd) 
-        @Html.TextBoxFor(x=>x.KategoriAd, new {@class="form-control"}) 
-        @Html.HiddenFor(x=>x.KategoriId)    
+    <div class="form-group">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.KategoriId)
     </div>
     <button class="btn btn-warning"> Güncelle </button>
     //ürün güncellede id gözükmemesi ama güncellemede işimize yarıcağından gizli   

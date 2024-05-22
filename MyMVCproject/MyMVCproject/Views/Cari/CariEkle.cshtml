@@ -12,18 +12,18 @@
 <form class="form-group" method="post">
 
     <div>
-        @Html.LabelFor(x => x.CariAd)
+        @Html.Label("Adı")
         @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red" }) @*bu validasyon doğrulaması uyarı mesajını cariler modelsden alıcak*@
 
         <br />
-        @Html.LabelFor(x => x.CariSoyad)
+        @Html.Label("Soyadı")
         @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.CariSehir)
+        @Html.Label("Şehir")
         @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
         <br />
-        @Html.LabelFor(x => x.CariMail)
+        @Html.Label("Mail Adres")
         @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CariMail, "", new { @style = "color:red" }) @*bu validasyon doğrulaması uyarı mesajını cariler modelsden alıcak*@
 
