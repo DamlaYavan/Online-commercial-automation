@@ -26,6 +26,11 @@ namespace myfirstproject.Models.siniflar
         [Required(ErrorMessage ="Bu alanı boş geçemezsiniz!")]
         public string CariMail { get; set; }
 
+        [Column(TypeName = "VarChar")]
+        [StringLength(15)]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
+        public string Sifre { get; set; }
+
         public bool Durum { get; set; }
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
