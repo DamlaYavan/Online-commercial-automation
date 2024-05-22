@@ -1,0 +1,70 @@
+﻿@model IEnumerable<myfirstproject.Models.groupsiniflar.TabloGrup2>
+
+<!-- /.card  bu partial view BasicTables view da kullanılmıştır-->
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Departman Personel Tablosu</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Departmanlar</th>
+                    <th>Progress Bar</th>
+                    <th style="width: 50px">Personel</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int sirano = 0;}
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@{sirano++;} @sirano</td>
+                        <td>@x.Departman</td>
+                        <td>
+                            @if (1 <= x.PersonelSayisi && x.PersonelSayisi < 3)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                </div>
+                            }
+                            @if (3 <= x.PersonelSayisi && x.PersonelSayisi < 5)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                </div>
+                            }
+                            @if (x.PersonelSayisi > 4)
+                            {
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar bg-success" style="width:90%"></div>
+                                </div>
+                            }
+
+                        </td>
+                        <td>
+                            @if (1 <= x.PersonelSayisi && x.PersonelSayisi < 3)
+                            {
+                                <span class="badge bg-danger">@x.PersonelSayisi</span>
+                            }
+                            @if (3 <= x.PersonelSayisi && x.PersonelSayisi < 5)
+                            {
+                                <span class="badge bg-warning">@x.PersonelSayisi</span>
+                            }
+                            @if (x.PersonelSayisi > 4)
+                            {
+                                <span class="badge bg-success">@x.PersonelSayisi</span>
+                            }
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->

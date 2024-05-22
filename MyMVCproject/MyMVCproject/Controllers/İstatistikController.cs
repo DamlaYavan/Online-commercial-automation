@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using myfirstproject.Models.siniflar;
 using MyProject.Models.siniflar;
+using myfirstproject.Models.groupsiniflar;
+
 namespace WebApplication2.Controllers
 {
     public class İstatistikController : Controller
@@ -80,5 +82,71 @@ namespace WebApplication2.Controllers
 
             return View();
         }
+
+        // End İstatik
+
+
+        // Hızlı tablolar başlangıç
+        public ActionResult BasicTables()  //kolay incelenebilir tablolar  
+        {
+            var Sorgu = from x in baglan.Carilers     //Müşteri Şeir tablosunu partial olarak yapılmadı
+                        group x by x.CariSehir into g  //g grup içine dahil olucak alan
+                        select new TabloGrup
+                        {
+                            Sehir = g.Key,  // o grubun alanı string 
+                            Sayi = g.Count()  //Şehire bağlı müşteri sayısı
+
+                        };
+            return View(Sorgu.ToList());
+        }
+
+        public PartialViewResult DeprtmnPersnlPartial()
+        {
+            var Sorgu2 = from x in baglan.Personels
+                        group x by x.Departman.DepartmanAd into g
+                        select new TabloGrup2
+                        {
+                            Departman = g.Key,
+                            PersonelSayisi = g.Count()  
+                        };
+            return PartialView(Sorgu2.ToList());
+        }
+
+        public PartialViewResult CarilerPartial()
+        {
+            var Sorgu3 = baglan.Carilers.Where(x=>x.Durum==true).ToList();
+            return PartialView(Sorgu3);
+        }
+
+        public PartialViewResult UrunlerPartial()
+        {
+            var Sorgu4 = baglan.Uruns.Where(x => x.Durum == true).ToList();
+            return PartialView(Sorgu4);
+        }
+
+        public PartialViewResult UrunMarkaPartial()
+        {
+            var Sorgu5 = from x in baglan.Uruns
+                         group x by x.Marka into g
+                         select new TabloGrup3
+                         {
+                             Marka = g.Key,
+                             Sayi = g.Count()  //Markadaki ürün sayısı
+                         };
+            return PartialView(Sorgu5.ToList());
+        }
+
+        public PartialViewResult UrunKategoriPartial()
+        {
+            var Sorgu6 = from x in baglan.Uruns
+                         group x by x.Kategori.KategoriAd into g
+                         select new TabloGrup4
+                         {
+                             Kategori = g.Key,
+                             UrunSayisi = g.Count()
+                         };
+            return PartialView(Sorgu6.ToList());
+        }
+        //Hızlı tablolar bitiş
     }
 }
