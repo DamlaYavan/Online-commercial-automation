@@ -11,11 +11,11 @@ namespace WebApplication2.Controllers
     {
         // GET: Personel
         Context baglan = new Context();
-        public ActionResult Index()
-        {
-            var degerler = baglan.Personels.ToList();
-            return View(degerler);
-        }
+        //public ActionResult Index()
+        //{
+        //    var degerler = baglan.Personels.ToList();
+        //    return View(degerler);
+        //}
 
         [HttpGet]
         public ActionResult PersonelEkle()
@@ -66,5 +66,11 @@ namespace WebApplication2.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult PersonelList()
+        {
+            var degerler = baglan.Personels.ToList();
+            return View(degerler);
+        }
     }
 }
