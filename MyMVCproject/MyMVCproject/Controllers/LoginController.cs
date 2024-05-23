@@ -60,5 +60,29 @@ namespace WebApplication2.Controllers
             }
             
         }
+
+        [HttpGet]
+        public ActionResult AdminGiris()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminGiris(Admin admin)
+        {
+            var bilgiler = baglan.Admins.FirstOrDefault
+                (x => x.KullaniciAd == admin.KullaniciAd && x.Sifre == admin.Sifre);
+            if (bilgiler != null)
+            {
+                FormsAuthentication.SetAuthCookie(bilgiler.KullaniciAd, false);
+                Session["KullaniciAd"] = bilgiler.KullaniciAd.ToString();
+                return RedirectToAction("Index", "Kategori");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+    
     }
 }
