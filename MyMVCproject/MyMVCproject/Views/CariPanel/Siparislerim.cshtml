@@ -1,0 +1,28 @@
+﻿@using myfirstproject.Models.siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "Siparislerim";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>Sipariş Geçmişim</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Görsel</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <th>@x.Urun.UrunAd</th> 
+        <th>
+        <img src="@x.Urun.UrunGorsel" width="100px"/> 
+        </th>
+        <th>@x.Fiyat</th>
+        <th>@Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy") </th>
+    </tr>
+    }
+</table>
