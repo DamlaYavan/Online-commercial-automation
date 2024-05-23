@@ -1,13 +1,21 @@
-﻿@using MyProject.Models.siniflar
-@model List<myfirstproject.Models.siniflar.Urun>
+﻿@using myfirstproject.Models.siniflar
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Urun>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<br />
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+{
+    <p>
+        Ürün Adı: @Html.TextBox("p")  @*bir parametre gönderiyo p adında*@
+        <input type="submit" value="Ara" />
+    </p>
+}
 <table class="table d-print-table-cell" style="margin-top:20px">
     <tr>
-        <th> ID </th>
         <th> Ürün </th>
         <th> Marka </th>
         <th> Stok </th>
@@ -23,19 +31,18 @@
     @foreach (var u in Model)
     {
         <tr>
-            <td> @u.UrunId</td>
             <td> @u.UrunAd</td>
             <td> @u.Marka</td>
             <td> @u.Stok</td>
-            <td> @u.AlisFiyat</td>
-            <td> @u.SatisFiyat</td>
+            <td> @u.AlisFiyat ₺</td>
+            <td> @u.SatisFiyat ₺</td>
             <td> @u.Kategori.KategoriAd</td>
             <td>
                 <a href="@u.UrunGorsel" class="d-block photo-item" data-fancybox="gallery">
-                    <img src="@u.UrunGorsel" style="width:100px; height:100px"/>
+                    <img src="@u.UrunGorsel" style="width:100px; height:100px" />
                 </a>
             </td>
-            <td> 
+            <td>
                 <a href="/Urun/UrunSil/@u.UrunId" class="btn btn-danger"> Sil </a>
             </td>
             <td>
@@ -44,7 +51,7 @@
         </tr>
     }
 </table>
-
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
 <a href="/Urun/UrunEkle/" class="btn btn-primary">Yeni Ürün </a>
 
 

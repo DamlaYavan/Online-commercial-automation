@@ -7,6 +7,7 @@ using MyProject.Models.siniflar;
 using myfirstproject.Models.siniflar;
 using System.Security.Cryptography;
 using System.Data.Entity.Core.Objects;
+using PagedList;
 
 namespace WebApplication2.Controllers
 {
@@ -15,11 +16,13 @@ namespace WebApplication2.Controllers
 
         // GET: Urun
         Context baglan = new Context();
-        public ActionResult Index()
+   
+        public ActionResult Index(string p, int sayfa = 1)
         {
-            var urunler = baglan.Uruns.Where(x=>x.Durum==true).ToList(); //Linq sorgusu sadece durumu true olanları getir
-            return View(urunler);
+                var degerler = baglan.Uruns.Where(x => x.UrunAd.Contains(p) || p == null).ToList().ToPagedList(sayfa, 4); //kaçıncı sayfadan başlayacak , Hersayfada kaç değer olucak 
+                return View(degerler);  //geriye degerleri döndür
         }
+        
 
         [HttpGet] //Get metodu bu form yüklendiğinde 
         public ActionResult UrunEkle()
@@ -81,6 +84,14 @@ namespace WebApplication2.Controllers
             return RedirectToAction("Index"); //güncelleme işleminden sonra kategori Index sayfasına dön. 
 
 
+        }
+
+
+        //pdf için
+        public ActionResult UrunListesi()
+        {
+            var degerler=baglan.Uruns.ToList();
+            return View(degerler);
         }
 
     }

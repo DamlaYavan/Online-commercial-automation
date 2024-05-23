@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using myfirstproject.Models.siniflar;
 using MyProject.Models.siniflar;
+using PagedList;
 
 namespace WebApplication2.Controllers
 {
@@ -12,9 +13,9 @@ namespace WebApplication2.Controllers
     {
         // GET: Kategori
         Context baglan = new Context(); //tablolarımız tutuluyor 
-        public ActionResult Index()
+        public ActionResult Index(string p ,int sayfa=1)
         {
-            var degerler = baglan.Kategoris.ToList();  //kategori listesi degerler atandı
+            var degerler = baglan.Kategoris.Where(x=>x.KategoriAd.Contains(p) || p==null) .ToList(). ToPagedList(sayfa, 4); //kaçıncı sayfadan başlayacak , Hersayfada kaç değer olucak 
             return View(degerler);  //geriye degerleri döndür
         }
 
