@@ -15,19 +15,17 @@
 <table class="table table-hover">
     <tr>
         @*Tablo Başlıkları*@
-        <th>Personel ID</th>
-        <th>Ad</th>
-        <th>Soyad</th>
+        <th>Personel</th>
         <th>Görsel</th>
         <th>Satışlar</th>
     </tr>
     @foreach (var x in Model)
     {
     <tr>
-        <td>@x.PersonelId</td>
-        <td>@x.PersonelAd</td>
-        <td>@x.PersonelSoyad</td>
-        <td>@x.PersonelGorsel</td>
+        <td>@x.PersonelAd  @x.PersonelSoyad</td>
+        <td>
+            <img src="@x.PersonelGorsel" width="100px" height="90px"/>
+        </td>
         <td> <a href="/Departman/DptPersonelSatis/@x.PersonelId" class="btn btn-default" style="background-color:darkorange">Satışlar</a> </td>
     </tr>
     }

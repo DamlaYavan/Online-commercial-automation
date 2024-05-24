@@ -8,9 +8,7 @@
 <table id="tbl1" class="table table-striped" style="margin-top:20px; background-color: cornsilk" ">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Seri No</th>
-            <th>Sıra No</th>
+            <th>Seri Sıra No</th>
             <th>Vergi Dairesi</th>
             <th>Tarih</th>
             <th>Saat</th>
@@ -24,15 +22,13 @@
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.FaturaId</td>
-            <td>@x.FaturaSeriNo</td>
-            <td>@x.FaturaSıraNo</td>
+            <td>@x.FaturaSeriNo @x.FaturaSıraNo</td>
             <td>@x.VergiDairesi</td>
             <td>@x.Tarih</td>
             <td>@x.Saat</td>
             <td>@x.TeslimEden</td>
             <td>@x.TeslimAlan</td>
-            <td>@x.Toplam</td>
+            <td>@x.Toplam ₺</td>
             <td><a href="/Fatura/FaturaGetir/@x.FaturaId" class="btn btn-success"> Güncelle  </a></td>
             <td><a href="/Fatura/FaturaDetay/@x.FaturaId" class="btn btn-default" style="background-color: lightseagreen; color:white "> Detaylar </a></td>
             @*departman detay sayfası ile aynı işlem olduğundan aynı controllara yönlendirdik*@

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using myfirstproject.Models.siniflar;
 using  MyProject.Models.siniflar;
+using PagedList;
 
 namespace WebApplication2.Controllers
 {
@@ -13,10 +14,10 @@ namespace WebApplication2.Controllers
         // GET: Cari
 
         Context Baglan = new Context();
-        public ActionResult Index()
+        public ActionResult Index(string p, int sayfa = 1)
         {
-            var degerler = Baglan.Carilers.Where(x=>x.Durum==true).ToList();
-            return View(degerler);
+            var degerler = Baglan.Carilers.Where(x => x.CariAd.Contains(p) || p == null && x.Durum==true).ToList().ToPagedList(sayfa, 4); //kaçıncı sayfadan başlayacak , Hersayfada kaç değer olucak 
+            return View(degerler);  //geriye degerleri döndür
         }
 
         [HttpGet]
