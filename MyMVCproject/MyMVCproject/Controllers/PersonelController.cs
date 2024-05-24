@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -34,9 +35,17 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel personel)
         {
+            if(Request.Files.Count>0) // isteklerin arasında bi dosya varsa 
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName); //dosyanın adını alıyoruz
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);  //uzantıyı alıyoruz
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                personel.PersonelGorsel="/Image/"+dosyaadi+uzanti; //personelin görselini bu url yaptık.
+            }
             baglan.Personels.Add(personel);
             baglan.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("PersonelList");
         }
 
 
@@ -57,13 +66,21 @@ namespace WebApplication2.Controllers
 
         public ActionResult PersonelGuncelle(Personel personel) //CariGetir Viewdan gelen departman
         {
+            if (Request.Files.Count > 0) // isteklerin arasında bi dosya varsa 
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName); //dosyanın adını alıyoruz
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);  //uzantıyı alıyoruz
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                personel.PersonelGorsel = "/Image/" + dosyaadi + uzanti; //personelin görselini bu url yaptık.
+            }
             var newpersonel = baglan.Personels.Find(personel.PersonelId);
             newpersonel.PersonelAd = personel.PersonelAd;
             newpersonel.PersonelSoyad = personel.PersonelSoyad;
             newpersonel.PersonelGorsel = personel.PersonelGorsel;
             newpersonel.Departmanid = personel.Departmanid;
             baglan.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("PersonelList");
         }
 
 
@@ -71,6 +88,15 @@ namespace WebApplication2.Controllers
         {
             var degerler = baglan.Personels.ToList();
             return View(degerler);
+        }
+
+        public ActionResult PersonelSil(int id)
+        {
+            var newcari = baglan.Personels.Find(id);
+            baglan.Personels.Remove(newcari);
+            baglan.SaveChanges();
+            return RedirectToAction("PersonelList");
+
         }
     }
 }

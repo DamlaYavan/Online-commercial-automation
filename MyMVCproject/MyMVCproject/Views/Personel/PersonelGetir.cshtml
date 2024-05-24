@@ -7,7 +7,7 @@
 <br />
 <h2>Personel Güncelleme</h2>
 <br />
-@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post)) //method, controller belirtisi
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" })) //method, controller belirtisi
 {  // post işlemi gerçekleştirdikden sonra hangi acsionresult çalışacak
     <div class="form-group">
         @Html.Label("Personel Ad")
@@ -17,7 +17,7 @@
         @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
         <br />
         @Html.Label("Personel Görsel")
-        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+        <input type="file" name="PersonelGorsel" />
         <br />
         @Html.LabelFor(x => x.Departman)
         @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })

@@ -9,6 +9,8 @@
 <h2 style=" font-size:25px ">Yeni Personel Sayfası </h2>
 <br />
 
+@using(Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
 <form class="form-group" method="post">
 
     <div>
@@ -19,18 +21,17 @@
         @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
         <br />
         @Html.Label("Personel Görsel")
-        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
-        <br />
+        <input type="file" name="PersonelGorsel"/>
+         <br />
         @Html.LabelFor(x => x.Departman)
         @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" }) @*controller personelekle dgr1 degeri geliyor.*@
-        @*Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })*@
 
         <br />
         <button class="btn btn-info"> Kaydet </button>
 
     </div>
 </form>
-
+}
 
 
 
