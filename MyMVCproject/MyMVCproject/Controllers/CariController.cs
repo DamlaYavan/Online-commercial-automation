@@ -29,14 +29,11 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public ActionResult CariEkle(Cariler cari)
         {
-            if (!ModelState.IsValid)  //validasyon kontrolü
-            {
-                return View("CariEkle"); //validasyon işlemleri doğru değilse ekleme ekranına geri dön 
-            }
+            cari.Sifre = "0000";
             cari.Durum = true; // ilk eklendiğinde true yap 
             Baglan.Carilers.Add(cari);
             Baglan.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new {p=""});
         }
 
         public ActionResult CariSil(int id)
@@ -57,10 +54,6 @@ namespace WebApplication2.Controllers
 
         public ActionResult CariGuncelle(Cariler cari) //CariGetir Viewdan gelen departman
         {
-            if (!ModelState.IsValid)  //validasyon kontrolü
-            {
-                return View("CariGetir"); //validasyon işlemleri doğru değilse güncelleme ekranına geri dön 
-            }
             var newcari = Baglan.Carilers.Find(cari.CariId);
             newcari.CariAd = cari.CariAd;
             newcari.CariSoyad = cari.CariSoyad;

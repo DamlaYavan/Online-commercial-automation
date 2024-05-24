@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 
 <br />
 <h2 style=" font-size:25px ">Yeni Müşteri Sayfası </h2>
@@ -28,7 +30,11 @@
         @Html.ValidationMessageFor(x => x.CariMail, "", new { @style = "color:red" }) @*bu validasyon doğrulaması uyarı mesajını cariler modelsden alıcak*@
 
         <br />
-        <button class="btn btn-info"> Kaydet </button>
-
+        <button class="btn btn-info" id="kaydet"> Kaydet </button>
+        <script>
+            $('#kaydet').click(function () {
+                swal("Müşteri Eklendi");
+            })
+        </script>
     </div>
 </form>
