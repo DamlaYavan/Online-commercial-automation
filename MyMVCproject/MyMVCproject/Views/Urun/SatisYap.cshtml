@@ -1,7 +1,6 @@
 ﻿@model myfirstproject.Models.siniflar.SatisHareket
-
 @{
-    ViewBag.Title = "SatisEkle";
+    ViewBag.Title = "SatisYap";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -13,8 +12,7 @@
 <form class="form-group" method="post">
 
     <div>
-        @Html.Label("Ürün")
-        @Html.DropDownListFor(x => x.UrunId, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
+        <input type="text" name="UrunId" value="@ViewBag.urunid" class="form-control" readonly />
 
         @Html.Label("Müşteri")   @*label içerisinde cari yerine müşteri yazması daha iyi*@
         @Html.DropDownListFor(x => x.CariId, (List<SelectListItem>)ViewBag.cariler, new { @class = "form-control" })
@@ -24,13 +22,13 @@
 
 
         @Html.LabelFor(x => x.Adet)
-        @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+        <input type="number" id="txt1" onchange="sum();" name="Adet" class="form-control" max="10" min="0"/>
 
         @Html.LabelFor(x => x.Fiyat)
-        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+        <input type="text" id="txt2" onkeyup="sum();" name="Fiyat" value="@ViewBag.satisfiyat" class="form-control"/>
 
         @Html.Label("Toplam Tutar")
-        @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+       <input type="text" id="txt3" name="ToplamTutar" value="0" class="form-control" readonly />
 
         <br />
         <button class="btn btn-info"> Kaydet </button>
@@ -38,3 +36,13 @@
     </div>
 </form>
 
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>
