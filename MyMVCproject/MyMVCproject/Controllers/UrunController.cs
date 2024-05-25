@@ -94,6 +94,40 @@ namespace WebApplication2.Controllers
             return View(degerler);
         }
 
+        [HttpGet]
+        public ActionResult SatisYap(int id)
+        {
+            List<SelectListItem> cariler = (from x in baglan.Carilers.ToList()
+                                            where x.Durum == true
+                                            select new SelectListItem
+                                            {
+                                                Text = x.CariAd + " " + x.CariSoyad,
+                                                Value = x.CariId.ToString()
+                                            }).ToList();
+            ViewBag.cariler = cariler;
+            List<SelectListItem> personeller = (from x in baglan.Personels.ToList()
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                                    Value = x.PersonelId.ToString()
+                                                }).ToList();
+            ViewBag.personeller = personeller;
+            var urun = baglan.Uruns.Find(id);
+            ViewBag.urunid = urun.UrunId;
+            ViewBag.satisfiyat = urun.SatisFiyat;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SatisYap(SatisHareket satis)
+        {
+            satis.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());  //o anki tarihi alsın.
+            baglan.SatisHarekets.Add(satis);
+            baglan.SaveChanges();
+            return RedirectToAction("Index","Satis");
+        }
+
     }
 
   
