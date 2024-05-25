@@ -1,0 +1,29 @@
+﻿@using myfirstproject.Models.siniflar
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<ol class="breadcrumb mb-4">
+   
+    <li class="breadcrumb-item active"> Kargo Takip Kodu: @ViewBag.kod  </li>
+</ol>
+
+<table class="table table-striped" style="margin-top:20px; background-color: cornsilk">
+    <tr>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Aciklama</td>
+            <td>@x.Tarih</td>
+        </tr>
+    }
+</table>
+
+

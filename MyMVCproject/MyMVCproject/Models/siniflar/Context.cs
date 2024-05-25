@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using myfirstproject.Models.siniflar;
 using System.Data.Entity;
+using myfirstproject.Models.siniflar;
 
 namespace MyProject.Models.siniflar
 {
@@ -18,6 +19,8 @@ namespace MyProject.Models.siniflar
         public DbSet<Kategori> Kategoris { get; set; }
         public DbSet<Detay> Detays { get; set; }
         public DbSet<Yapilacak> Yapilacaks { get; set; }
+        public DbSet<Kargo> Kargos { get; set; }
+        public DbSet<KargoTakip> KargoTakips { get; set; }
 
 
     }

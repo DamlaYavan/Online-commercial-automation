@@ -1,0 +1,42 @@
+﻿@model myfirstproject.Models.siniflar.Kargo
+
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<br />
+<h2 style=" font-size:25px ">Yeni Kargo </h2>
+<br />
+
+<form class="form-group" method="post">
+
+    <div>
+        @Html.Label("Takip Kodu")
+        <input type="text" name="TakipKodu" value="@ViewBag.takipkod" class="form-control" readonly />
+        <br />
+        @Html.Label("Personel")
+        @Html.DropDownListFor(x => x.Personel, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control" }) @*controller urunekleden dgr1 degeri geliyor.*@
+        <br />
+        @Html.Label("Alıcı")
+        @Html.DropDownListFor(x => x.Alici, (List<SelectListItem>)ViewBag.cariler, new { @class = "form-control" })
+        <br />
+        @Html.Label("Açıklama")
+        @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+        <br />
+        @Html.Label("Tarih")
+        <input type="date" name="Tarih" class="form-control" />
+        <br />
+
+        <button class="btn btn-info" id="kaydet"> Kaydet </button>
+        <script>
+            $('#kaydet').click(function () {
+                swal("Kargo Eklendi");
+            })
+        </script>
+    </div>
+</form>
+

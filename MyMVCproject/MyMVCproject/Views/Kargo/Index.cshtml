@@ -1,0 +1,44 @@
+﻿@using myfirstproject.Models.siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.PagedList<Kargo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")  @*bir parametre gönderiyo p adında*@
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table class="table table-striped" style="margin-top: 20px; background-color: cornsilk">
+    <tr>
+        <th> Takip Kodu </th>
+        <th> Personel </th>
+        <th> Alıcı </th>
+        <th> Tarih </th>
+        <th> Detaylar </th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.TakipKodu</td>
+            <td>@k.Personel</td>
+            <td>@k.Alici</td>
+            <td>@k.Tarih</td>
+            <td>
+                <a href="/Kargo/KargoTakip/@k.TakipKodu" class="btn btn-default" style="background-color: lightseagreen; color:white"> Detaylar </a>
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+<a href="/Kargo/YeniKargo/" class="btn btn-info" style="background-color: firebrick"> Yeni Kargo Girişi  </a>
+
