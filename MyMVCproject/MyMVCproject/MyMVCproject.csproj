@@ -147,6 +147,7 @@
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
+    <Compile Include="Controllers\GrafikController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Models\groupsiniflar\TabloGrup2.cs" />
     <Compile Include="Models\groupsiniflar\TabloGrup3.cs" />
     <Compile Include="Models\groupsiniflar\TabloGrup4.cs" />
+    <Compile Include="Models\groupsiniflar\UrunStok.cs" />
     <Compile Include="Models\siniflar\Admin.cs" />
     <Compile Include="Models\siniflar\Cariler.cs" />
     <Compile Include="Models\siniflar\Class1.cs" />
@@ -177,6 +179,7 @@
     <Compile Include="Models\siniflar\Kargo.cs" />
     <Compile Include="Models\siniflar\KargoTakip.cs" />
     <Compile Include="Models\siniflar\Kategori.cs" />
+    <Compile Include="Models\siniflar\Mesaj.cs" />
     <Compile Include="Models\siniflar\Personel.cs" />
     <Compile Include="Models\siniflar\SatisHareket.cs" />
     <Compile Include="Models\groupsiniflar\TabloGrup.cs" />
@@ -2933,9 +2936,11 @@
     <Content Include="Views\Kargo\YeniKargo.cshtml" />
     <Content Include="Views\Kargo\KargoTakip.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
+    <Content Include="Views\Grafik\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Mesajlar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

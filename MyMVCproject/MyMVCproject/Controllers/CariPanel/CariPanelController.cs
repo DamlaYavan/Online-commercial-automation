@@ -27,5 +27,22 @@ namespace WebApplication2.Controllers.CariPanel
             var degerler = baglan.SatisHarekets.Where(x => x.CariId == id).ToList();
             return View(degerler);
         }
+
+        public ActionResult GelenMesajlar()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        //public ActionResult YeniMesaj()
+        //{
+        //    return View();
+        //}
     }
 }
