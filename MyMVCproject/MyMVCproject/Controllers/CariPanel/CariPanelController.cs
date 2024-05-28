@@ -24,12 +24,21 @@ namespace WebApplication2.Controllers.CariPanel
             ViewBag.m = mail;
             var mailid = baglan.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariId).FirstOrDefault();
             ViewBag.mid = mailid;
-            var toplamsatis = baglan.SatisHarekets.Where(x => x.CariId == mailid).Count();
+            var toplamsatis = baglan.SatisHarekets.Where(x => x.CariId == mailid).Count().ToString();
             ViewBag.toplamsatis = toplamsatis;
-            var toplamtutar = baglan.SatisHarekets.Where(x => x.CariId == mailid).Sum(y => y.ToplamTutar);
-            ViewBag.toplamtutar = toplamtutar;
-            var toplamurunsayisi = baglan.SatisHarekets.Where(x => x.CariId == mailid).Sum(y => y.Adet);
-            ViewBag.toplamurunsayisi = toplamurunsayisi;
+            //Satış Sayısı 0 sa kasada sıfırdır
+            if (Convert.ToInt32(toplamsatis) != 0)
+            {
+                var toplamtutar = baglan.SatisHarekets.Where(x => x.CariId == mailid).Sum(y => y.ToplamTutar);
+                ViewBag.toplamtutar = toplamtutar;
+                var toplamurunsayisi = baglan.SatisHarekets.Where(x => x.CariId == mailid).Sum(y => y.Adet);
+                ViewBag.toplamurunsayisi = toplamurunsayisi;
+            }
+            else {
+                ViewBag.toplamtutar = 0;
+                ViewBag.toplamurunsayisi = 0;
+            }
+            
             var adsoyad = baglan.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
             ViewBag.adsoyad = adsoyad;
 
