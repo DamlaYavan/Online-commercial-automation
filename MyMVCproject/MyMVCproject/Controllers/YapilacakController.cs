@@ -28,5 +28,22 @@ namespace WebApplication2.Controllers
             return View(yapilacaklar);           
 
         }
+
+        [HttpGet]
+        public ActionResult ekle()
+        {
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult ekle(Yapilacak not)
+        {         
+
+            baglan.Yapilacaks.Add(not);
+            baglan.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

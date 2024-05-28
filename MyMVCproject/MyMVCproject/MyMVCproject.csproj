@@ -142,6 +142,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminHesapController.cs" />
     <Compile Include="Controllers\CariController.cs" />
     <Compile Include="Controllers\CariPanel\CariPanelController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
@@ -157,7 +158,6 @@
     <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
-    <Compile Include="Controllers\UrunDetayController.cs" />
     <Compile Include="Controllers\YapilacakController.cs" />
     <Compile Include="Controllers\İstatistikController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2897,7 +2897,6 @@
     <Content Include="thumber\scss\_site-blocks.scss" />
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\Galeri\Index.cshtml" />
-    <Content Include="Views\UrunDetay\Index.cshtml" />
     <Content Include="Views\İstatistik\BasicTables.cshtml" />
     <Content Include="Views\İstatistik\DeprtmnPersnlPartial.cshtml" />
     <Content Include="Views\İstatistik\CarilerPartial.cshtml" />
@@ -2951,6 +2950,8 @@
     <Content Include="Views\Mesaj\YeniMesaj.cshtml" />
     <Content Include="Views\Mesaj\MesajDetay.cshtml" />
     <Content Include="Views\Mesaj\CopKutusu.cshtml" />
+    <Content Include="Views\AdminHesap\Hesabim.cshtml" />
+    <Content Include="Views\AdminHesap\Partial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
