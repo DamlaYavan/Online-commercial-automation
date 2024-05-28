@@ -9,6 +9,7 @@ using myfirstproject.Models.siniflar;
 using MyProject.Models.siniflar;
 namespace WebApplication2.Controllers.CariPanel
 {
+    [Authorize]
     public class CariPanelController : Controller
     {
         // GET: CariPanel
@@ -126,7 +127,7 @@ namespace WebApplication2.Controllers.CariPanel
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            Session.Abandon();
+            Session.Abandon();  //Session bilgisini silme
             return RedirectToAction("Index", "Login");
         }
 

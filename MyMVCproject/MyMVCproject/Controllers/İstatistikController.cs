@@ -10,6 +10,7 @@ using myfirstproject.Models.groupsiniflar;
 
 namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class İstatistikController : Controller
     {
         // GET: İstatistik

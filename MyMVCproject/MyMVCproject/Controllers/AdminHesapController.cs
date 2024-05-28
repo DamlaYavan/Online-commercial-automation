@@ -6,12 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using myfirstproject.Models.siniflar;
 using MyProject.Models.siniflar;
+using System.Web.Security;
+
 namespace WebApplication2.Controllers
 {
     public class AdminHesapController : Controller
     {
         // GET: AdminHesap
         Context baglan =new Context();
+
+        [Authorize]
         public ActionResult Hesabim()
         {
             var kullaniciad = (string)Session["KullaniciAd"];
@@ -36,6 +40,12 @@ namespace WebApplication2.Controllers
             admn.Sifre =ad.Sifre;
             baglan.SaveChanges();
             return RedirectToAction("Hesabim");
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();  //Session bilgisini silme
+            return RedirectToAction("Index", "Login");
         }
     }
 }

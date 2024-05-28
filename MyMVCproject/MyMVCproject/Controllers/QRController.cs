@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class QRController : Controller
     {
         // GET: QR

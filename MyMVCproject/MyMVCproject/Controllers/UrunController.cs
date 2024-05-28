@@ -11,6 +11,7 @@ using PagedList;
 
 namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class UrunController : Controller
     {
 

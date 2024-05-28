@@ -9,6 +9,7 @@ using PagedList;
 
 namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class KategoriController : Controller
     {
         // GET: Kategori

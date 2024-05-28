@@ -10,6 +10,7 @@ using MyProject.Models.siniflar;
 
 namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class GrafikController : Controller
     {
         // GET: Grafik

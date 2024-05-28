@@ -9,6 +9,7 @@ using PagedList;
 
 namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class KargoController : Controller
     {
         // GET: Kargo

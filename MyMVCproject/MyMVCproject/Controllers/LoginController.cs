@@ -9,6 +9,7 @@ using MyProject.Models.siniflar;
 
 namespace WebApplication2.Controllers
 {
+    [AllowAnonymous] //giiş olmasada bu sayfaya girebilir herkese açık
     public class LoginController : Controller
     {
         // GET: Login

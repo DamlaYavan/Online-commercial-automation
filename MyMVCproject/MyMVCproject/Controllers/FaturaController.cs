@@ -8,6 +8,7 @@ using MyProject.Models.siniflar;
 
 namespace WebApplication2.Controllers
 {
+    [Authorize]
     public class FaturaController : Controller
     {
         // GET: Fatura
