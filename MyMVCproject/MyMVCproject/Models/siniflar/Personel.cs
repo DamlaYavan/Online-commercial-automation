@@ -18,6 +18,8 @@ namespace myfirstproject.Models.siniflar
         [StringLength(30)]
         public String PersonelSoyad { get; set; }
 
+        public String PersonelMail { get; set; }
+
         [Column(TypeName = "VarChar")]
         [StringLength(250)] //uzun link olabilir 
         public String PersonelGorsel { get; set; }  //görselin sadece yolunu tutucaz o yüzden string 

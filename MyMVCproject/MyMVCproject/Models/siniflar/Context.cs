@@ -21,6 +21,7 @@ namespace MyProject.Models.siniflar
         public DbSet<Yapilacak> Yapilacaks { get; set; }
         public DbSet<Kargo> Kargos { get; set; }
         public DbSet<KargoTakip> KargoTakips { get; set; }
+        public DbSet<Mesaj> Mesajs { get; set; }
 
 
     }

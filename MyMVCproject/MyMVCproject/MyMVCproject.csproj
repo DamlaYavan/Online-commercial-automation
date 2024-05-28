@@ -152,6 +152,7 @@
     <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MesajController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
@@ -163,6 +164,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\groupsiniflar\Copkutusu.cs" />
     <Compile Include="Models\groupsiniflar\TabloGrup2.cs" />
     <Compile Include="Models\groupsiniflar\TabloGrup3.cs" />
     <Compile Include="Models\groupsiniflar\TabloGrup4.cs" />
@@ -2937,6 +2939,18 @@
     <Content Include="Views\Kargo\KargoTakip.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
     <Content Include="Views\Grafik\Index.cshtml" />
+    <Content Include="Views\CariPanel\GelenMesajlar.cshtml" />
+    <Content Include="Views\CariPanel\GidenMesajlar.cshtml" />
+    <Content Include="Views\CariPanel\MesajDetay.cshtml" />
+    <Content Include="Views\CariPanel\YeniMesaj.cshtml" />
+    <Content Include="Views\CariPanel\KargoTakip.cshtml" />
+    <Content Include="Views\CariPanel\CariKargoTakip.cshtml" />
+    <Content Include="Views\CariPanel\Partial1.cshtml" />
+    <Content Include="Views\Mesaj\GelenMesajlar.cshtml" />
+    <Content Include="Views\Mesaj\GidenMesajlar.cshtml" />
+    <Content Include="Views\Mesaj\YeniMesaj.cshtml" />
+    <Content Include="Views\Mesaj\MesajDetay.cshtml" />
+    <Content Include="Views\Mesaj\CopKutusu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
