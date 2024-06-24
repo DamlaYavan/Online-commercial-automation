@@ -80,5 +80,5 @@ Projede veritabanı bütünlüğünü ve veri doğruluğunu sağlamak için teti
 <img src="<img width="935" alt="ürünlersayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/f6c86884-5d2a-4184-bc1d-97f50eb33c4d">
 ">
 
-<img src="<img width="941" alt="yapilacaklarsayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/d6afadfb-7c2f-4c76-b643-b3f7726f3394">
+<img width="941" alt="yapilacaklarsayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/d6afadfb-7c2f-4c76-b643-b3f7726f3394
 ">
