@@ -45,8 +45,8 @@ Tüm sayfalarda yetkilendirme işlemlerinin uygulanabilmesi için, global olarak
 
 ##LİNQ SORGULARI
 Projede , veri tabanına yönelik birçok sorgu LINQ kullanarak gerçekleştirildi . Örneğin, istatistikler sayfasında çeşitli raporlar ve analizler için LINQ sorguları  kullanıldı. Bu sorgular, veritabanındaki verileri analiz etmek, filtrelemek, sıralamak ve gruplamak  için kullanıldı. Linq sorgulaıryla oluşturulmuş İstatistikler sayfasının göünüşü:  
-<img src="<img width="934" alt="istatistikler" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/a74fc529-6501-4f88-9015-4b1e27b68e80">
-">
+<img width="934" alt="istatistikler" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/3ebcea45-d618-4edb-a5d4-b66acb0623c5">
+
 
 
 ##TRİGGER
@@ -58,28 +58,21 @@ Projede veritabanı bütünlüğünü ve veri doğruluğunu sağlamak için teti
 - Fatura kalemleri tablosuna yeni bir kayıt eklendiğinde, ilgili faturanın toplam tutarını otomatik olarak güncelleyen bir tetikleyici kullanılmıştır. Bu tetikleyici, her fatura kalemi eklendiğinde, fatura toplamının doğru bir şekilde hesaplanmasını sağlar.
 
 # PROJE GÖRSELLERİ
-<img src="<img width="918" alt="loginekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/82892dff-e389-4ac7-96e3-39493c104eb6">
-">
-<img src="<img width="940" alt="hizlibakistablolari" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/5e11b068-b7c9-4eb0-af80-7133bbfddd22">
-">
-<img src="<img width="858" alt="kayitekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/fbca90dd-b44e-4a9a-ab7c-0d11491ded62">
-">
 
-<img src="<img width="935" alt="mesajkutusu" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/d88a99d3-c761-4c76-9075-a0edb534c0be">
-">
+<img width="918" alt="loginekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/66384e4c-c65b-4efa-b436-fa02da594420">
 
-<img src="<img width="937" alt="müsterigirisihesabim" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/a93fd666-e779-47e2-b36f-762067bd42bd">
-">
+<img width="858" alt="kayitekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/45eaccb6-d54a-459c-8c8c-3d2a40e9a982">
 
-<img src="<img width="931" alt="personellersayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/870db188-bc1d-43db-8e55-a89778aaa5e3">
-">
+<img width="940" alt="hizlibakistablolari" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/1987f6b7-12de-4b1b-8fc8-9fb6074c6efd">
 
-<img src="<img width="940" alt="satislar" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/96ad09f9-11cd-4863-9c3d-1afa0240ef6b">
-">
+<img width="935" alt="mesajkutusu" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/9c5909e0-5da3-4325-bd9b-12b3055e7d15">
 
-<img src="<img width="935" alt="ürünlersayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/f6c86884-5d2a-4184-bc1d-97f50eb33c4d">
-">
-<img src="<img width="941" alt="yapilacaklarsayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/91fc3822-827d-47ec-bca3-4bf33fcd309f">
-">
+<img width="937" alt="müsterigirisihesabim" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/11c95de6-94ff-43d3-b54e-56c6cdd233f3">
+
+<img width="931" alt="personellersayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/5c51fcd4-1cfb-4c89-969f-3f6d23f780fa">
+
+<img width="940" alt="satislar" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/097d7ad9-c0ee-4de5-9883-443138221364">
+
+<img width="935" alt="ürünlersayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/1ca45a36-ae0c-4981-91d5-f31644819c0b">
 
 <img width="941" alt="yapilacaklarsayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/a53c512c-1b3e-4e6e-ac86-99ff49a7878c">
