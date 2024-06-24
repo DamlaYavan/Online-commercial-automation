@@ -57,6 +57,6 @@ Projede veritabanı bütünlüğünü ve veri doğruluğunu sağlamak için teti
 - Fatura kalemleri tablosuna yeni bir kayıt eklendiğinde, ilgili faturanın toplam tutarını otomatik olarak güncelleyen bir tetikleyici kullanılmıştır. Bu tetikleyici, her fatura kalemi eklendiğinde, fatura toplamının doğru bir şekilde hesaplanmasını sağlar.
 
 # PROJE GÖRSELLERİ
-<img src="![Başlıksız Di<img width="918" alt="loginekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/ed0e71db-35ae-438d-8760-fa483277029a">
-yagram]()>
+<img src="<img width="918" alt="loginekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/82892dff-e389-4ac7-96e3-39493c104eb6">
+">
 
