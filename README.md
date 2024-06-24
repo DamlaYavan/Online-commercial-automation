@@ -57,25 +57,6 @@ Projede veritabanı bütünlüğünü ve veri doğruluğunu sağlamak için teti
 - Fatura kalemleri tablosuna yeni bir kayıt eklendiğinde, ilgili faturanın toplam tutarını otomatik olarak güncelleyen bir tetikleyici kullanılmıştır. Bu tetikleyici, her fatura kalemi eklendiğinde, fatura toplamının doğru bir şekilde hesaplanmasını sağlar.
 
 # PROJE GÖRSELLERİ
+<img src="![Başlıksız Di<img width="918" alt="loginekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/ed0e71db-35ae-438d-8760-fa483277029a">
+yagram]()>
 
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/51077294-b855-43f6-99a2-a1f7abe91fbe)
-)
-
-)>
-
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/8d2381d3-4785-4664-8325-0130117b9f0d)
-)
-)>
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/310c7fc5-b338-425c-adb4-ea16e9fd90d1)
-)
-)>
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/8c0b1bd8-23e5-414d-8746-83a13e2dbfc9)
-)>
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/896bdbe8-ce2d-495d-b908-ad9debe22dee)
-)>
-
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/e415417f-00da-4ba0-bebd-d6016320694d)
-)>
-
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/a7a61a9a-92e3-4edb-8fd3-ac164d6fb95b)
-)>
