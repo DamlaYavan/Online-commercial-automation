@@ -45,8 +45,9 @@ Tüm sayfalarda yetkilendirme işlemlerinin uygulanabilmesi için, global olarak
 
 ##LİNQ SORGULARI
 Projede , veri tabanına yönelik birçok sorgu LINQ kullanarak gerçekleştirildi . Örneğin, istatistikler sayfasında çeşitli raporlar ve analizler için LINQ sorguları  kullanıldı. Bu sorgular, veritabanındaki verileri analiz etmek, filtrelemek, sıralamak ve gruplamak  için kullanıldı. Linq sorgulaıryla oluşturulmuş İstatistikler sayfasının göünüşü:  
-<img src="![Başlıksız Diyagram](![image](https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/a48a975e-25b3-4666-b2a6-0a11106bd604)
-)>
+<img src="<img width="934" alt="istatistikler" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/a74fc529-6501-4f88-9015-4b1e27b68e80">
+">
+
 
 ##TRİGGER
 Trigger, yani tetikleyici, bir veritabanı işlemi (INSERT, UPDATE, DELETE) gerçekleştirildiğinde otomatik olarak çalışan bir tür veritabanı nesnesidir. Tetikleyiciler, veritabanı yönetim sistemlerinde (DBMS) veri bütünlüğünü ve doğruluğunu sağlamak amacıyla kullanılır. Tetikleyiciler, belirli olaylar meydana geldiğinde belirli işlemlerin otomatik olarak gerçekleştirilmesine olanak tanır. 
@@ -59,4 +60,25 @@ Projede veritabanı bütünlüğünü ve veri doğruluğunu sağlamak için teti
 # PROJE GÖRSELLERİ
 <img src="<img width="918" alt="loginekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/82892dff-e389-4ac7-96e3-39493c104eb6">
 ">
+<img src="<img width="940" alt="hizlibakistablolari" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/5e11b068-b7c9-4eb0-af80-7133bbfddd22">
+">
+<img src="<img width="858" alt="kayitekrani" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/fbca90dd-b44e-4a9a-ab7c-0d11491ded62">
+">
 
+<img src="<img width="935" alt="mesajkutusu" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/d88a99d3-c761-4c76-9075-a0edb534c0be">
+">
+
+<img src="<img width="937" alt="müsterigirisihesabim" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/a93fd666-e779-47e2-b36f-762067bd42bd">
+">
+
+<img src="<img width="931" alt="personellersayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/870db188-bc1d-43db-8e55-a89778aaa5e3">
+">
+
+<img src="<img width="940" alt="satislar" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/96ad09f9-11cd-4863-9c3d-1afa0240ef6b">
+">
+
+<img src="<img width="935" alt="ürünlersayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/f6c86884-5d2a-4184-bc1d-97f50eb33c4d">
+">
+
+<img src="<img width="941" alt="yapilacaklarsayfasi" src="https://github.com/DamlaYavan/Online-commercial-automation/assets/116723754/d6afadfb-7c2f-4c76-b643-b3f7726f3394">
+">
